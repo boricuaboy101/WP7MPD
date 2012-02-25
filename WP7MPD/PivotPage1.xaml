@@ -1,0 +1,48 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7MPD.PivotPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}" SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480" Foreground="#CDFFF5F5" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="MPD Server Connection Testing Page" Margin="-12,0,12,0" Name="Testing">
+           
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Input" Name="Input">
+                <Grid>
+                    <Button Content="Send Command" Height="73" HorizontalAlignment="Left" Margin="51,530,0,0" Name="button1" VerticalAlignment="Top" Width="350" Click="button1_Click" />
+                    <TextBox Height="159" HorizontalAlignment="Left" Margin="56,372,0,0" Name="textBox2" Text="" VerticalAlignment="Top" Width="338" />
+                    <Button Content="Stats" Height="80" HorizontalAlignment="Left" Margin="70,50,0,0" Name="button2" VerticalAlignment="Top" Width="153" Click="button2_Click" />
+                    <Button Content="Lsinfo" Height="80" HorizontalAlignment="Left" Margin="220,50,0,0" Name="button3" VerticalAlignment="Top" Width="153" Click="button3_Click" />
+                    <Button Content="Search" Height="80" HorizontalAlignment="Left" Margin="70,119,0,0" Name="button4" VerticalAlignment="Top" Width="153" Click="button4_Click" />
+                    <Button Content="Count" Height="80" HorizontalAlignment="Left" Margin="220,119,0,0" Name="button5" VerticalAlignment="Top" Width="153" Click="button5_Click" />
+                    <Button Content="Ping" Height="80" HorizontalAlignment="Left" Margin="220,196,0,0" Name="button6" VerticalAlignment="Top" Width="153" Click="button6_Click" />
+                    <Button Content="Password" Height="80" HorizontalAlignment="Left" Margin="70,193,0,0" Name="button7" VerticalAlignment="Top" Width="153" FontSize="24" Click="button7_Click" />
+                    <Button Content="List" Height="80" HorizontalAlignment="Right" Margin="0,269,83,0" Name="button8" VerticalAlignment="Top" Width="153" Click="button8_Click" />
+                    <Button Content="Find" Height="80" HorizontalAlignment="Left" Margin="70,273,0,0" Name="button9" VerticalAlignment="Top" Width="153" Click="button9_Click" />
+                    <TextBlock Height="44" HorizontalAlignment="Left" Margin="67,356,0,0" Name="textBlock1" Text="Command to Send" VerticalAlignment="Top" Width="314" TextAlignment="Center" />
+                </Grid>
+            </controls:PivotItem>
+            <!--Pivot item Two-->
+            <controls:PivotItem Header="Output" Name="Output">
+                <Grid>
+                    <TextBox Height="529" HorizontalAlignment="Left" Margin="4,0,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="443" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" />
+                    <Button Content="Recieve Server Response" Height="68" HorizontalAlignment="Left" Margin="13,530,0,0" Name="button10" VerticalAlignment="Top" Width="429" Click="button10_Click" />
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+        <TextBox Height="72" HorizontalAlignment="Left" Margin="591,537,0,0" Name="textBox3" Text="TextBox" VerticalAlignment="Top" Width="460" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,125,0,0" Name="textBlock2" Text="" VerticalAlignment="Top" />
+    </Grid>
+
+   
+</phone:PhoneApplicationPage>
