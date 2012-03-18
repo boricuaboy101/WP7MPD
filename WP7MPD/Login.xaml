@@ -6,13 +6,16 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" FontSize="{StaticResource PhoneFontSizeNormal}"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded" FontFamily="Segoe WP Light">
+    shell:SystemTray.IsVisible="false" Loaded="PhoneApplicationPage_Loaded" FontFamily="Segoe WP Light" AllowDrop="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Black">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/WP7MPD;component/Images/wallpaper2.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -21,25 +24,21 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="WP7 MPD" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFFE0000" FontFamily="Segoe WP Light" />
-            <TextBlock x:Name="PageTitle" Text="Connect" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFE6F000" FontFamily="Segoe WP Light" />
+            <TextBlock x:Name="PageTitle" Text="Login" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFE6F000" FontFamily="Segoe WP Light" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox Height="69" HorizontalAlignment="Left" Margin="138,6,0,0" Name="textBox1" Text="tupika.no-ip.org" VerticalAlignment="Top" Width="312" TextInputStart="textBox1_TextInput" Background="#BFFF0000" SelectionBackground="#FF12A4EA" SelectionForeground="#FFFF0303" />
-            <PasswordBox Height="69" HorizontalAlignment="Left" Margin="138,81,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="312" PasswordChar="*" Password="******" TextInputStart="passwordBox1_TextInputStart" Background="#BFFFFF00" SelectionBackground="Black" SelectionForeground="White" />
-            <TextBlock Height="35" HorizontalAlignment="Left" Margin="64,22,0,0" Name="textBlock1" Text="Server:" VerticalAlignment="Top" Width="133" FontSize="24" Foreground="Red" />
-            <TextBlock FontSize="24" Height="35" HorizontalAlignment="Left" Margin="30,96,0,0" Name="textBlock3" Text="Password:" VerticalAlignment="Top" Width="133" Foreground="Yellow" />
-            <TextBox Height="69" HorizontalAlignment="Left" Margin="138,156,0,0" Name="textBox3" Text="6600" VerticalAlignment="Top" Width="312" TextInputStart="textBox3_TextInputStart" Background="#BF00FF00" />
-            <TextBlock FontSize="24" Height="35" HorizontalAlignment="Left" Margin="84,172,0,0" Name="textBlock4" Text="Port:" VerticalAlignment="Top" Width="133" Foreground="#FF28FF00" />
-            <Button Content="Login" Height="83" HorizontalAlignment="Left" Margin="109,407,0,0" Name="button1" VerticalAlignment="Top" Width="237" Foreground="#FF18FF00" Click="button1_Click"></Button>
-            <TextBox Height="73" HorizontalAlignment="Left" Margin="138,527,0,0" Name="textBox5" Text="" VerticalAlignment="Top" Width="182" Background="Black" BorderBrush="#BF000000" Foreground="White"></TextBox>
-            <TextBlock FontSize="24" Height="35" HorizontalAlignment="Left" Margin="116,491,0,0" Name="textBlock6" Text="Connection Status:" VerticalAlignment="Top" Width="224" TextAlignment="Center" />
-            <Grid.Background>
-                <ImageBrush ImageSource="/WP7MPD;component/Images/wallpaper-184107.jpg" />
-            </Grid.Background>
+        <Grid x:Name="ContentPanel" Margin="12,140,12,0" Grid.RowSpan="2">
+            <TextBox Height="84" HorizontalAlignment="Left" Margin="120,6,0,0" Name="textBox1" Text="tupika.no-ip.org" VerticalAlignment="Top" Width="312" TextInputStart="textBox1_TextInput" Background="#71FF0000" SelectionBackground="White" SelectionForeground="#FFFF0303" Foreground="White" FontFamily="Segoe WP Light" BorderBrush="Transparent" />
+            <PasswordBox Height="69" HorizontalAlignment="Left" Margin="120,81,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="312" PasswordChar="*" Password="cnu2012" TextInputStart="passwordBox1_TextInputStart" Background="#73FFFF00" SelectionBackground="White" SelectionForeground="Yellow" Foreground="White" FontFamily="Segoe WP Light" BorderBrush="Transparent" />
+            <TextBlock Height="35" HorizontalAlignment="Left" Margin="46,22,0,0" Name="textBlock1" Text="Server:" VerticalAlignment="Top" Width="133" FontSize="24" Foreground="Red" FontFamily="Segoe WP Light" />
+            <TextBlock FontSize="24" Height="35" HorizontalAlignment="Left" Margin="12,96,0,0" Name="textBlock3" Text="Password:" VerticalAlignment="Top" Width="133" Foreground="Yellow" FontFamily="Segoe WP Light" />
+            <TextBox Height="69" HorizontalAlignment="Left" Margin="120,156,0,0" Name="textBox3" Text="6600" VerticalAlignment="Top" Width="312" TextInputStart="textBox3_TextInputStart" Background="#7300FF00" SelectionForeground="#FF00F509" SelectionBackground="White" Foreground="White" FontFamily="Segoe WP Light" BorderBrush="Transparent" />
+            <TextBlock FontSize="24" Height="35" HorizontalAlignment="Left" Margin="66,172,0,0" Name="textBlock4" Text="Port:" VerticalAlignment="Top" Width="133" Foreground="#FF28FF00" FontFamily="Segoe WP Light" />
+            <Button Content="Connect" Height="93" HorizontalAlignment="Left" Margin="113,293,0,0" Name="button1" VerticalAlignment="Top" Width="237" Foreground="#FF18FF00" Click="button1_Click" FontFamily="Segoe WP Light"></Button>
+            <TextBox Height="80" HorizontalAlignment="Left" Margin="120,436,0,0" Name="textBox5" Text="" VerticalAlignment="Top" Width="230" Background="Black" BorderBrush="#BF000000" Foreground="White" TextAlignment="Center" FontFamily="Segoe WP Light" FontSize="24"></TextBox>
+            <TextBlock FontSize="24" Height="35" HorizontalAlignment="Left" Margin="120,395,0,0" Name="textBlock6" Text="Connection Status:" VerticalAlignment="Top" Width="230" TextAlignment="Center" Foreground="White" FontFamily="Segoe WP Light" />
         </Grid>
-       
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->

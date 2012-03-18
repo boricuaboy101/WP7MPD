@@ -66,16 +66,21 @@ namespace WP7MPD
         {
         }
 
-        public string serverResponse { get; set; }
+        public MpdResponse serverResponse { get; set; }
 
         public MpcConnection connection { get; set; }
-
+        public bool panFirstLoad { get; set; }
+        public bool repeat { get; set; }
+        public bool paused { get; set; }
+        public bool random { get; set; }
         public string clientMessage { get; set; }
         public string serverName { get; set; }
         public int portNumber { get; set; }
+        public int artists { get; set; }
+        public int albums { get; set; }
         public string passwd { get; set; }
        
- 
+
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)

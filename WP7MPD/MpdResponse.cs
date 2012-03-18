@@ -22,8 +22,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Libmpc
-{
+
     /// <summary>
     /// The MpdResponse class parses the response to an MPD command in it's most
     /// basic structure.
@@ -153,6 +152,8 @@ namespace Libmpc
             this.errorMessage = errorMessage;
             this.message = message;
         }
+
+        public MpdResponse() { }
         /// <summary>
         /// Returns the values in all lines with the given attribute.
         /// </summary>
@@ -323,4 +324,4 @@ namespace Libmpc
 
         #endregion
     }
-}
+

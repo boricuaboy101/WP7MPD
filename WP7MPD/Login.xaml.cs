@@ -20,6 +20,7 @@ namespace WP7MPD
         public Login()
         {
             InitializeComponent();
+            (App.Current as App).panFirstLoad = true;
         }
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
@@ -34,11 +35,10 @@ namespace WP7MPD
             (App.Current as App).connection = new MpcConnection();
             string connected = (App.Current as App).connection.Connect((App.Current as App).serverName, (App.Current as App).portNumber);
            textBox5.Text = connected;
-           (App.Current as App).passwd = "password " + passwordBox1.Password + "\r\n" + " ";
+           (App.Current as App).passwd = "password " + passwordBox1.Password + System.Environment.NewLine + " ";
            (App.Current as App).clientMessage = (App.Current as App).passwd;
-           (App.Current as App).connection.Send((App.Current as App).clientMessage);
-           (App.Current as App).serverResponse = (App.Current as App).connection.Receive();
-           NavigationService.Navigate(new Uri("/PivotPage1.xaml", UriKind.Relative));
+            (App.Current as App).connection.Exec((App.Current as App).clientMessage);
+           NavigationService.Navigate(new Uri("/PanoramaPage1.xaml", UriKind.Relative));
         }
 
       

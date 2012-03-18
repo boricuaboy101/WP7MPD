@@ -27,16 +27,16 @@
                     <Button Content="Count" Height="80" HorizontalAlignment="Left" Margin="220,119,0,0" Name="button5" VerticalAlignment="Top" Width="153" Click="button5_Click" />
                     <Button Content="Ping" Height="80" HorizontalAlignment="Left" Margin="220,196,0,0" Name="button6" VerticalAlignment="Top" Width="153" Click="button6_Click" />
                     <Button Content="Password" Height="80" HorizontalAlignment="Left" Margin="70,193,0,0" Name="button7" VerticalAlignment="Top" Width="153" FontSize="24" Click="button7_Click" />
-                    <Button Content="List" Height="80" HorizontalAlignment="Right" Margin="0,269,83,0" Name="button8" VerticalAlignment="Top" Width="153" Click="button8_Click" />
-                    <Button Content="Find" Height="80" HorizontalAlignment="Left" Margin="70,273,0,0" Name="button9" VerticalAlignment="Top" Width="153" Click="button9_Click" />
+                    <Button Content="Remote" Height="80" HorizontalAlignment="Right" Margin="0,269,83,0" Name="button8" VerticalAlignment="Top" Width="153" Click="button8_Click" />
+                    <Button Content="Panorama" Height="80" HorizontalAlignment="Left" Margin="70,273,0,0" Name="button9" VerticalAlignment="Top" Width="153" Click="button9_Click" />
                     <TextBlock Height="44" HorizontalAlignment="Left" Margin="67,356,0,0" Name="textBlock1" Text="Command to Send" VerticalAlignment="Top" Width="314" TextAlignment="Center" />
                 </Grid>
             </controls:PivotItem>
             <!--Pivot item Two-->
             <controls:PivotItem Header="Output" Name="Output">
                 <Grid>
-                    <TextBox Height="529" HorizontalAlignment="Left" Margin="4,0,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="443" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" />
                     <Button Content="Recieve Server Response" Height="68" HorizontalAlignment="Left" Margin="13,530,0,0" Name="button10" VerticalAlignment="Top" Width="429" Click="button10_Click" />
+                    <ListBox Height="527" HorizontalAlignment="Left" Margin="7,5,0,0" Name="listBox1" VerticalAlignment="Top" Width="460" />
                 </Grid>
             </controls:PivotItem>
         </controls:Pivot>

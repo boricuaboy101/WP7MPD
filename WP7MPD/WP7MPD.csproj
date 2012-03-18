@@ -62,7 +62,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Exception.cs" />
+    <Compile Include="PivotPage2.xaml.cs">
+      <DependentUpon>PivotPage2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -73,8 +77,11 @@
     <Compile Include="MpdResponse.cs" />
     <Compile Include="MpdStatistics.cs" />
     <Compile Include="MpdStatus.cs" />
-    <Compile Include="Main.xaml.cs">
-      <DependentUpon>Main.xaml</DependentUpon>
+    <Compile Include="Page2.xaml.cs">
+      <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PanoramaPage1.xaml.cs">
+      <DependentUpon>PanoramaPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="PivotPage1.xaml.cs">
       <DependentUpon>PivotPage1.xaml</DependentUpon>
@@ -91,11 +98,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="PivotPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Main.xaml">
+    <Page Include="Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PanoramaPage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,8 +122,16 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
-    <Resource Include="Images\wallpaper-530296.jpg" />
-    <Resource Include="Images\wallpaper-184107.jpg" />
+    <Resource Include="Images\appwallpaper.png" />
+    <Resource Include="Images\Speaker.png" />
+    <Resource Include="Images\Sound.png" />
+    <Resource Include="Images\Media-Player.png" />
+    <Resource Include="Images\wallpaper-1421270.jpg" />
+    <Resource Include="Images\wallpaper-827010.jpg" />
+    <Resource Include="Images\lod.png" />
+    <Resource Include="Images\wallpaper.png" />
+    <Resource Include="Images\wallpaper1.png" />
+    <Resource Include="Images\wallpaper2.png" />
     <Content Include="Resources\GeosansLight-Oblique.ttf" />
     <Content Include="Resources\GeosansLight.ttf" />
   </ItemGroup>

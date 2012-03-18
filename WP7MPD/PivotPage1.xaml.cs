@@ -22,10 +22,9 @@ namespace WP7MPD
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           
-                (App.Current as App).connection.Send(textBox2.Text + "\r\n" + " " );
-                (App.Current as App).serverResponse = (App.Current as App).connection.Receive();
-                textBox1.Text = (App.Current as App).serverResponse;
+            listBox1.Items.Clear();
+            (App.Current as App).serverResponse = (App.Current as App).connection.Exec(textBox2.Text + System.Environment.NewLine);
+            listBox1.Items.Add((App.Current as App).serverResponse.ToString());
             
             Testing.SelectedItem = Output;
         }
@@ -67,23 +66,27 @@ namespace WP7MPD
 
         private void button9_Click(object sender, RoutedEventArgs e)
         {
-            textBox2.Text = "find";
+            NavigationService.Navigate(new Uri("/PanoramaPage1.xaml", UriKind.Relative));
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
         {
-            textBox2.Text = "list";
+            NavigationService.Navigate(new Uri("/Page2.xaml", UriKind.Relative));
+
         }
 
         private void button10_Click(object sender, RoutedEventArgs e)
         {
-            (App.Current as App).serverResponse = (App.Current as App).connection.Receive();
-            textBox1.Text = (App.Current as App).serverResponse;
-            if ((App.Current as App).serverResponse == "Operation Timeout" || (App.Current as App).serverResponse == "Operation Timeout")
+            listBox1.Items.Clear();
+            listBox1.Items.Add((App.Current as App).serverResponse.ToString());
+            if ((App.Current as App).serverResponse[0].Equals( "Operation Timeout"))
             {
                 (App.Current as App).connection.Connect((App.Current as App).serverName, (App.Current as App).portNumber);
-                (App.Current as App).connection.Send((App.Current as App).passwd);
+               (App.Current as App).connection.Exec((App.Current as App).passwd);
             }
         }
+
+    
+      
     }
 }

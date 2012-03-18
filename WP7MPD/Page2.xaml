@@ -1,0 +1,81 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7MPD.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="false" AllowDrop="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"></StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" AllowDrop="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56*" />
+                <RowDefinition Height="379*" />
+            </Grid.RowDefinitions>
+            <Button Content="Vol +" Height="72" HorizontalAlignment="Right" Margin="0,258,60,0" Name="button1" VerticalAlignment="Top" Width="160" FontFamily="Segoe WP Light" Click="button1_Click" Foreground="Black" Grid.Row="1"></Button>
+            <Button Content="Vol -" Height="72" Margin="59,258,0,0" Name="button2" VerticalAlignment="Top" FontFamily="Segoe WP Light" Click="button2_Click" Foreground="Black" HorizontalAlignment="Left" Width="159" Grid.Row="1"></Button>
+            <Button Content="Play" Height="72" HorizontalAlignment="Left" Margin="390,179,0,0" Name="button4" VerticalAlignment="Top" Width="160" FontFamily="Segoe WP Light" Click="button4_Click" Foreground="Black" Grid.Row="1"></Button>
+            <Button Content="Next" Height="72" HorizontalAlignment="Right" Margin="0,178,60,0" Name="button5" VerticalAlignment="Top" Width="160" FontFamily="Segoe WP Light" Click="button5_Click" Foreground="Black" Grid.Row="1"></Button>
+            <Button Content="Previous" Height="72" HorizontalAlignment="Left" Margin="58,180,0,0" Name="button6" VerticalAlignment="Top" Width="160" FontFamily="Segoe WP Light" Click="button6_Click" Foreground="Black" Grid.Row="1"></Button>
+            <Button Content="Stop" FontFamily="Segoe WP Light" Height="72" HorizontalAlignment="Left" Margin="224,180,0,0" Name="button7" VerticalAlignment="Top" Width="160" Click="button7_Click" Foreground="Black" Grid.Row="1"></Button>
+            <Button Content="Shuffle" FontFamily="Segoe WP Light" Height="72" HorizontalAlignment="Left" Margin="224,258,0,0" Name="button8" VerticalAlignment="Top" Width="160" Click="button8_Click" Foreground="Black" Grid.Row="1"></Button>
+            <Button Content="Repeat" FontFamily="Segoe WP Light" Height="72" HorizontalAlignment="Right" Margin="0,258,226,0" Name="button9" VerticalAlignment="Top" Width="160" Click="button9_Click" Foreground="Black" Grid.Row="1"></Button>
+            <TextBox Height="64" HorizontalAlignment="Left" Margin="6,39,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="432" FontSize="22" IsEnabled="True" IsReadOnly="False" Foreground="Black" IsHitTestVisible="False" Background="Transparent" Grid.Row="1" FontFamily="Segoe WP Light">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush />
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox FontSize="22" Height="64" HorizontalAlignment="Right" Margin="0,96,424,0" Name="textBox2" Text="TextBox" VerticalAlignment="Top" Width="347" IsEnabled="True" IsReadOnly="False" Foreground="Black" IsHitTestVisible="False" Background="Transparent" Grid.Row="1" FontFamily="Segoe WP Light">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush />
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox FontSize="22" Height="64" HorizontalAlignment="Right" Margin="0,39,6,0" Name="textBox3" Text="TextBox" VerticalAlignment="Top" Width="326" IsEnabled="True" IsReadOnly="False" Foreground="Black" IsHitTestVisible="False" Background="Transparent" Grid.Row="1" FontFamily="Segoe WP Light" TextAlignment="Right">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush />
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox FontSize="22" Height="64" HorizontalAlignment="Right" Margin="0,96,6,0" Name="textBox4" Text="TextBox" VerticalAlignment="Top" Width="412" IsEnabled="True" IsReadOnly="False" Foreground="Black" IsHitTestVisible="False" Background="Transparent" Grid.Row="1" FontFamily="Segoe WP Light" TextAlignment="Right">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush />
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBlock Height="101" HorizontalAlignment="Left" Margin="5,-45,0,0" Name="textBlock1" Text="Remote Control" VerticalAlignment="Top" Width="499" FontSize="72" />
+        </Grid>
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="616,12,0,0" Name="textBlock5" Text="Volume: " VerticalAlignment="Top" FontFamily="Segoe WP Light" />
+        <TextBlock Height="30" HorizontalAlignment="Right" Margin="0,12,14,0" Name="textBlock6" Text="vol" VerticalAlignment="Top" Width="87" FontFamily="Segoe WP Light" />
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

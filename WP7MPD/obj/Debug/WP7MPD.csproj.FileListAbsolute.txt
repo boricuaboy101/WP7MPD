@@ -11,10 +11,12 @@ c:\users\josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\WP7M
 c:\users\josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\WP7MPD.pdb
 c:\users\josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\XapCacheFile.xml
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\Login.g.i.cs
-C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\Main.g.i.cs
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\PivotPage1.g.i.cs
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\Bin\Debug\Microsoft.Phone.Controls.xml
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\WP7MPD.Resources.Resource1.resources
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\Page2.g.i.cs
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\PanoramaPage1.g.i.cs
+C:\Users\Josh\documents\visual studio 2010\Projects\WP7MPD\WP7MPD\obj\Debug\PivotPage2.g.i.cs

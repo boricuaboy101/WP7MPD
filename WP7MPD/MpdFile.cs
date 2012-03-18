@@ -19,9 +19,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
-namespace Libmpc
-{
+
     /// <summary>
     /// The MpdFile class contains all meta data for a file of the MPD.
     /// </summary>
@@ -324,67 +324,36 @@ namespace Libmpc
             int pos = NO_POS;
             int id = NO_ID;
 
-
-            foreach (KeyValuePair<string, string> line in response)
+            StringReader reader = new StringReader(response.ToString());
+            List<string> ret = new List<string>();
+            string line = reader.ReadLine();
+            while (!(line.Equals("OK")  || line.StartsWith("ACK")))
             {
-                if( line.Key != null )
-                    switch (line.Key)
-                    {
-                        case TAG_FILE:
-                            file = line.Value;
-                            break;
-                        case TAG_TIME:
-                            int tryTime;
-                            if( int.TryParse( line.Value, out tryTime ) )
-                                time = tryTime;
-                            break;
-                        case TAG_ALBUM:
-                            album = line.Value;
-                            break;
-                        case TAG_ARTIST:
-                            artist = line.Value;
-                            break;
-                        case TAG_TITLE:
-                            title = line.Value;
-                            break;
-                        case TAG_TRACK:
-                            track = line.Value;
-                            break;
-                        case TAG_NAME:
-                            name = line.Value;
-                            break;
-                        case TAG_GENRE:
-                            genre = line.Value;
-                            break;
-                        case TAG_DATE:
-                            date = line.Value;
-                            break;
-                        case TAG_COMPOSER:
-                            composer = line.Value;
-                            break;
-                        case TAG_PERFORMER:
-                            performer = line.Value;
-                            break;
-                        case TAG_COMMENT:
-                            comment = line.Value;
-                            break;
-                        case TAG_DISC:
-                            int tryDisc;
-                            if (int.TryParse(line.Value, out tryDisc))
-                                disc = tryDisc;
-                            break;
-                        case TAG_POS:
-                            int tryPos;
-                            if (int.TryParse(line.Value, out tryPos))
-                                pos = tryPos;
-                            break;
-                        case TAG_ID:
-                            int tryId;
-                            if (int.TryParse(line.Value, out tryId))
-                                id = tryId;
-                            break;
-                    }
+                ret.Add(line);
+                line = reader.ReadLine();
+                if (String.IsNullOrEmpty(line))
+                {
+                    line = "OK";
+                }
             }
+
+            file = ret[0].Substring(5);
+            time = Int32.Parse(ret[1].Substring(5));
+            artist = ret[2].Substring(7);
+            album = ret[5].Substring(7);
+            title = ret[4].Substring(7);
+            track = ret[6].Substring(7);
+            date = ret[7].Substring(5);
+            genre = ret[8].Substring(7);
+            disc = Int32.Parse(ret[9].Substring(5));
+            pos = Int32.Parse(ret[10].Substring(4));
+            id = Int32.Parse(ret[11].Substring(3));
+          
+
+
+
+
+           
 
             if (file == null)
                 return null;
@@ -556,4 +525,4 @@ namespace Libmpc
             return ret;
         }
     }
-}
+
